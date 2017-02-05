@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node index.js",
-		"dev-start": "nodemon index.js"
+		"start-dev": "nodemon index.js"
   },
   "dependencies": {
     "compression": "^1.6.2",
