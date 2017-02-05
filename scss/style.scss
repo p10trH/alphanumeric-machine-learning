@@ -1,0 +1,50 @@
+#main {
+	display: flex;
+	height: 100vh;
+	width: 100vw;
+
+	align-items: center;
+	justify-content: center;
+}
+
+form {
+	display: flex;
+
+	.input-group {
+		width: 100%;
+
+		@media (min-width: 420px) {
+			margin-right: 0.5rem;
+			width: auto;
+
+			flex-grow: 3;
+		}
+	}
+
+	button {
+		margin-top: 0.5rem;
+		width: 100%;
+
+		@media (min-width: 420px) {
+			margin-top: 0;
+			width: auto;
+		}
+	}
+}
+
+#browse {
+	cursor: pointer;
+}
+
+#upload {
+	cursor: pointer;
+}
+
+#hidden {
+	height: 0;
+	width: 0;
+}
+
+.hidden {
+	display: none;
+}

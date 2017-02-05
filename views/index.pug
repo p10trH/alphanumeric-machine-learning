@@ -1,0 +1,64 @@
+doctype html
+html
+	head
+		meta(charset='utf-8')
+		meta(name='viewport' content='width=device-width, initial-scale=1.0')
+		title Alphanumeric Character Identification
+		link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css')
+		link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css')
+		link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css')
+		link(rel='stylesheet' href='/css/style.css')
+	body(lang='en')
+		#main
+			#input-box.card
+				.card-header
+					ul.nav.nav-tabs.card-header-tabs
+						li.nav-item
+							a.active.nav-link(href='#') Image
+						li.nav-item
+							a.nav-link(href='#') Drawing
+				.card-block.text-center
+					#working.hidden
+						i.fa.fa-spinner.fa-spin.fa-3x
+					#result(class=result?'':'hidden')
+						p.card-text= result
+						a#refresh.btn.btn-primary(href='/') Try again
+					#default(class=result?'hidden':'')
+						p.card-text.text-center Upload a number or character in JPG format.
+						form.form-inline(action='http://localhost:3000/upload' method='post' encType='multipart/form-data')
+							#file-group.input-group
+								#browse.input-group-addon.btn-primary: i.fa.fa-folder-open
+								input#hidden(name='imageFile' type='file' accept='image/jpeg')
+								input#file-name.form-control(type='text' readonly)
+							button#upload.btn.btn-primary(type='submit' disabled): i.fa.fa-upload
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+		script.
+			$('#browse').click(function() {
+				$('#hidden').click()
+			})
+
+			// on file selection
+			$('#hidden').change(function() {
+				// insert filename into input box
+				$('#file-name').val($('#hidden').val())
+
+				// if right file type
+				if ($('#file-name').val().match(/[.](jpg|jpeg|JPG|JPEG)$/g)) {
+					$('#file-group').addClass('has-success')
+					$('#file-name').addClass('form-control-success')
+					$('#file-group').removeClass('has-danger')
+					$('#file-name').removeClass('form-control-danger')
+					$('#upload').prop('disabled', false)
+				} else {
+					$('#file-group').addClass('has-danger')
+					$('#file-name').addClass('form-control-danger')
+					$('#file-group').removeClass('has-success')
+					$('#file-name').removeClass('form-control-success')
+					$('#upload').prop('disabled', true)
+				}
+			})
+
+			$('#upload').click(function() {
+				$('#working').removeClass('hidden')
+				$('#default').addClass('hidden')
+			})
