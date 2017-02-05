@@ -30,7 +30,7 @@ app.post('/upload', (req, res) => {
 	var upload = req.files.imageFile
  
 	// use the mv() method to place the file somewhere on your server 
-	upload.mv('./uploads/' + upload.name, (err) => {
+	upload.mv('./public/uploads/' + upload.name, (err) => {
 		if (err) {
 			//res.status(500).send(err)
 			console.log('something went wrong')
