@@ -25,7 +25,7 @@ html
 						a#refresh.btn.btn-primary(href='/') Try again
 					#default(class=result?'hidden':'')
 						p.card-text.text-center Upload a number or character in JPG format.
-						form.form-inline(action='http://localhost:3000/upload' method='post' encType='multipart/form-data')
+						form.form-inline(action='http://alphanum.herokuapp.com/upload' method='post' encType='multipart/form-data')
 							#file-group.input-group
 								#browse.input-group-addon.btn-primary: i.fa.fa-folder-open
 								input#hidden(name='imageFile' type='file' accept='image/jpeg')
