@@ -6,7 +6,8 @@
   "author": "jlave2 <jlave2@uic.edu>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js",
+		"dev-start": "nodemon index.js"
   },
   "dependencies": {
     "compression": "^1.6.2",
