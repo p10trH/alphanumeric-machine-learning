@@ -1,23 +1,26 @@
 {
-  "name": "alphanumeric-machine-learning",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/jlave2/alphanumeric-machine-learning.git",
-  "author": "jlave2 <jlave2@uic.edu>",
-  "license": "MIT",
-  "scripts": {
-    "start": "node index.js",
+	"name": "alphanumeric-machine-learning",
+	"version": "1.0.0",
+	"engines": {
+		"node": "7.5.0"
+	},
+	"main": "index.js",
+	"repository": "https://github.com/jlave2/alphanumeric-machine-learning.git",
+	"author": "jlave2 <jlave2@uic.edu>",
+	"license": "MIT",
+	"scripts": {
+		"start": "node index.js",
 		"start-dev": "nodemon index.js"
-  },
-  "dependencies": {
-    "compression": "^1.6.2",
-    "express": "^4.14.1",
-    "express-fileupload": "^0.0.6",
-    "node-sass-middleware": "^0.11.0",
-    "pug": "^2.0.0-beta11",
-    "python-shell": "^0.4.0"
-  },
-  "devDependencies": {
-    "nodemon": "^1.11.0"
-  }
+	},
+	"dependencies": {
+		"compression": "^1.6.2",
+		"express": "^4.14.1",
+		"express-fileupload": "^0.0.6",
+		"node-sass-middleware": "^0.11.0",
+		"pug": "^2.0.0-beta11",
+		"python-shell": "^0.4.0"
+	},
+	"devDependencies": {
+		"nodemon": "^1.11.0"
+	}
 }
